@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinothini M · gold & silver · girl talks when touched</title>
+    <!-- meta -->
+    <meta name="description" content="Vinothini M – aspiring software engineer, girl photo speaks on touch, growing education">
+    <meta name="keywords" content="software engineer, gold, silver, girl, interactive, talks, C, C++, Python">
+    <meta name="author" content="Vinothini M">
+    <!-- fonts + icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #1a1e28;
+            color: #e0d5b9;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* ========== GOLD & SILVER BACKGROUND ========== */
+        .gold-silver-bg {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(135deg, #1e2432 0%, #2a2f3d 100%);
+            z-index: -5;
+        }
+        .metallic-shine {
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle at 30% 40%, rgba(255,215,0,0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 70%, rgba(192,192,192,0.15) 0%, transparent 50%);
+            z-index: -4;
+            animation: metallicGlow 12s infinite alternate;
+        }
+        @keyframes metallicGlow {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.8; }
+        }
+        .particle {
+            position: fixed;
+            width: 4px; height: 4px;
+            background: #ffd700;
+            border-radius: 50%;
+            box-shadow: 0 0 20px 5px #ffd700, 0 0 40px 10px #c0c0c0;
+            z-index: -3;
+            opacity: 0.3;
+            animation: particleFloat 15s infinite linear;
+        }
+        @keyframes particleFloat {
+            0% { transform: translateY(0) translateX(0); opacity: 0.3; }
+            50% { opacity: 0.8; }
+            100% { transform: translateY(-100px) translateX(50px); opacity: 0; }
+        }
+        .p1 { top: 20%; left: 10%; animation-duration: 12s; }
+        .p2 { top: 60%; left: 80%; animation-duration: 18s; background: #c0c0c0; }
+        .p3 { top: 30%; left: 40%; animation-duration: 14s; }
+        .p4 { top: 70%; left: 20%; animation-duration: 20s; background: #c0c0c0; }
+
+        /* ========== NAVIGATION ========== */
+        header {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1200px;
+            background: rgba(26,30,40,0.7);
+            backdrop-filter: blur(12px);
+            border-radius: 80px;
+            border: 2px solid rgba(255,215,0,0.5);
+            box-shadow: 0 0 40px rgba(255,215,0,0.3);
+            padding: 0.5rem 2.2rem;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 700;
+            font-family: 'Cormorant Garamond', serif;
+            background: linear-gradient(135deg, #ffd700, #c0c0c0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #e0d5b9;
+            padding: 0.5rem 1.6rem;
+            border-radius: 60px;
+            background: rgba(26,30,40,0.5);
+            border: 1px solid rgba(255,215,0,0.3);
+            transition: 0.3s;
+        }
+        .nav-links a:hover {
+            background: rgba(255,215,0,0.1);
+            border-color: #ffd700;
+            box-shadow: 0 0 30px #ffd700;
+            color: #fff;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 2.2rem;
+            color: #ffd700;
+            cursor: pointer;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 10;
+        }
+        .section {
+            padding: 7rem 0 3rem;
+        }
+        .metallic-card {
+            background: rgba(26,30,40,0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 70px;
+            border: 2px solid #ffd700;
+            box-shadow: 0 30px 50px -18px #000, 0 0 80px rgba(255,215,0,0.3);
+            padding: 3rem;
+            animation: cardShimmer 6s infinite alternate;
+            color: #e0d5b9;
+        }
+        @keyframes cardShimmer {
+            0% { box-shadow: 0 30px 50px -18px #000, 0 0 60px rgba(255,215,0,0.3); }
+            100% { box-shadow: 0 30px 60px -15px #000, 0 0 100px rgba(192,192,192,0.5); }
+        }
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            font-family: 'Cormorant Garamond', serif;
+            background: linear-gradient(135deg, #ffd700, #c0c0c0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            border-left: 12px solid #ffd700;
+            padding-left: 2rem;
+            margin-bottom: 2.5rem;
+            text-shadow: 0 0 30px rgba(255,215,0,0.5);
+        }
+
+        /* ===== HOME with interactive talking girl ===== */
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        .hero-badge {
+            background: rgba(255,215,0,0.1);
+            color: #ffd700;
+            padding: 0.4rem 2.5rem;
+            border-radius: 70px;
+            border: 1px solid #ffd700;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .hero-name {
+            font-size: 4.2rem;
+            font-family: 'Cormorant Garamond', serif;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #ffffff, #ffd700);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .hero-name span {
+            border-bottom: 4px solid #ffd700;
+        }
+        .about-text {
+            background: rgba(26,30,40,0.5);
+            border-radius: 60px;
+            padding: 2rem;
+            border: 1px solid rgba(255,215,0,0.3);
+            color: #e0d5b9;
+        }
+        .hero-decor {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        .profile-photo {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ffd700, #c0c0c0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 60px rgba(255,215,0,0.6);
+            border: 4px solid #fff;
+            cursor: pointer;
+            transition: transform 0.3s;
+            position: relative;
+        }
+        .profile-photo:hover {
+            transform: scale(1.05);
+        }
+        .profile-photo i {
+            font-size: 8rem;
+            color: #1a1e28;
+            filter: drop-shadow(0 0 20px #ffd700);
+        }
+        .speech-bubble {
+            position: absolute;
+            top: -80px;
+            background: rgba(255,215,0,0.95);
+            color: #1a1e28;
+            padding: 1rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 0.3s;
+            white-space: nowrap;
+            box-shadow: 0 0 30px #ffd700;
+            font-size: 1.1rem;
+            pointer-events: none;
+            z-index: 100;
+            max-width: 250px;
+            white-space: normal;
+            text-align: center;
+        }
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid rgba(255,215,0,0.95);
+        }
+        .profile-photo.show-bubble .speech-bubble {
+            opacity: 1;
+        }
+        .photo-caption {
+            font-size: 1.2rem;
+            color: #c0c0c0;
+            letter-spacing: 2px;
+        }
+
+        /* ===== TECHNICAL FLOWER ===== */
+        .flower-container {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0 3rem;
+        }
+        .flower {
+            position: relative;
+            width: 460px; height: 460px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .flower-core {
+            width: 130px; height: 130px;
+            background: linear-gradient(135deg, #ffd700, #c0c0c0);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 80px #ffd700;
+            border: 3px solid #fff;
+            z-index: 5;
+            color: #1a1e28;
+            font-weight: 700;
+        }
+        .petal {
+            position: absolute;
+            width: 160px; height: 160px;
+            background: rgba(26,30,40,0.7);
+            backdrop-filter: blur(6px);
+            border-radius: 60% 40% 50% 50%;
+            border: 2px solid #ffd700;
+            box-shadow: 0 15px 30px -5px #000, 0 0 60px rgba(255,215,0,0.4);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: 0.3s;
+            color: #ffd700;
+        }
+        .petal:hover { transform: scale(1.08); border-color: #c0c0c0; }
+        .petal-1 { top: 0; left: 50%; transform: translate(-50%,0) rotate(-5deg); }
+        .petal-2 { top: 30%; right: 5%; transform: translate(0,-20%) rotate(40deg); }
+        .petal-3 { bottom: 10%; right: 20%; transform: rotate(80deg); }
+        .petal-4 { bottom: 10%; left: 20%; transform: rotate(-80deg); }
+        .petal-5 { top: 30%; left: 5%; transform: translate(0,-20%) rotate(-40deg); }
+        .skill-name { font-weight: 700; font-size: 1.3rem; }
+        .skill-percent-hidden { font-size:1rem; color:#c0c0c0; opacity:0; transition:0.2s; }
+        .petal:hover .skill-percent-hidden { opacity:1; }
+
+        /* ===== BOOKS (soft skills) ===== */
+        .book-container {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+        .book-card {
+            width: 260px;
+            height: 300px;
+            perspective: 2500px;
+            cursor: pointer;
+        }
+        .book-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+        .book-card.open .book-inner { transform: rotateY(180deg); }
+        .book-front, .book-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 30px;
+            padding: 1.8rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(26,30,40,0.9);
+            border: 2px solid #ffd700;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 60px rgba(255,215,0,0.3);
+            backdrop-filter: blur(4px);
+            text-align: center;
+        }
+        .book-front {
+            background: linear-gradient(145deg, #2a2f3d, #1a1e28);
+            color: #ffd700;
+        }
+        .book-back {
+            background: linear-gradient(145deg, #1e2432, #2a2f3d);
+            color: #c0c0c0;
+            transform: rotateY(180deg);
+            border-color: #c0c0c0;
+        }
+        .book-back p { margin:0.5rem 0; font-size:1rem; }
+        .book-front i { font-size:3.5rem; color:#ffd700; margin-bottom:1rem; }
+        .book-front h4 { font-size:2rem; margin-bottom:0.5rem; }
+        .book-hint { margin-top:0.8rem; font-size:0.9rem; color:#c0c0c0; }
+
+        /* ===== JUMPING GIRL EDUCATION with GROWTH ===== */
+        .education-jump-section {
+            background: rgba(26,30,40,0.4);
+            backdrop-filter: blur(8px);
+            border-radius: 80px;
+            padding: 3rem 2rem;
+            border: 2px solid #ffd700;
+            margin-top: 2rem;
+        }
+        .jump-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #ffd700;
+            margin-bottom: 2rem;
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .jump-stage-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            position: relative;
+            min-height: 350px;
+        }
+        .stage {
+            text-align: center;
+            width: 200px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .stage .year {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #c0c0c0;
+            margin-bottom: 1rem;
+        }
+        .stage .platform {
+            background: rgba(255,215,0,0.2);
+            border: 2px solid #ffd700;
+            border-radius: 40px;
+            padding: 1rem;
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            width: 100%;
+        }
+        .jumping-girl {
+            font-size: 4rem;
+            color: #ffd700;
+            filter: drop-shadow(0 0 30px #ffd700);
+            animation: jump 2s infinite ease-in-out;
+            position: relative;
+            z-index: 10;
+            transition: all 0.5s;
+            display: inline-block;
+        }
+        /* Size variations for different stages */
+        .stage-sslc .jumping-girl {
+            font-size: 3rem;
+        }
+        .stage-hsc .jumping-girl {
+            font-size: 4.5rem;
+        }
+        .stage-college .jumping-girl {
+            font-size: 6rem;
+        }
+        @keyframes jump {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-40px); }
+        }
+        .stage-line {
+            position: absolute;
+            bottom: 70px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #ffd700, #c0c0c0);
+            z-index: 1;
+        }
+
+        /* projects - two cards */
+        .proj-grid {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 2rem;
+        }
+        .proj-card {
+            background: rgba(26,30,40,0.6);
+            backdrop-filter: blur(8px);
+            border-radius: 70px;
+            padding: 2.5rem;
+            border: 2px solid #c0c0c0;
+            box-shadow: 0 0 80px rgba(192,192,192,0.3);
+            color: #e0d5b9;
+            animation: projFloat 7s infinite alternate;
+        }
+        @keyframes projFloat {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-15px); }
+        }
+        .proj-icon { font-size: 3rem; color: #ffd700; }
+        .proj-title { font-size: 2rem; font-weight: 700; color: #ffd700; }
+
+        /* certifications & contact */
+        .cert-row {
+            display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;
+        }
+        .cert-badge {
+            background: rgba(26,30,40,0.6); backdrop-filter: blur(8px);
+            border-radius: 60px; padding: 1rem 2.2rem;
+            border: 2px solid #c0c0c0; color: #ffd700;
+            display: inline-flex; align-items: center; gap: 0.8rem;
+        }
+        .contact-panel {
+            background: rgba(26,30,40,0.6); backdrop-filter: blur(12px);
+            border-radius: 80px; padding: 3rem;
+            border: 2px solid #ffd700; text-align: center;
+        }
+        .contact-flex {
+            display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;
+        }
+        .contact-item {
+            background: rgba(26,30,40,0.5); padding: 1rem 2rem;
+            border-radius: 70px; border: 2px solid #ffd700;
+            text-decoration: none; color: #ffd700; display: flex; align-items: center; gap: 1rem;
+        }
+        .contact-item:hover {
+            background: rgba(255,215,0,0.1); border-color: #c0c0c0;
+        }
+
+        /* ===== CHATBOT ===== */
+        .chatbot-button {
+            position: fixed; bottom: 30px; right: 30px; width: 70px; height: 70px;
+            border-radius: 50%; background: rgba(26,30,40,0.8); backdrop-filter: blur(8px);
+            border: 2px solid #ffd700; display: flex; align-items: center; justify-content: center;
+            font-size: 2.2rem; color: #ffd700; cursor: pointer; z-index: 2000;
+            box-shadow: 0 0 40px #ffd700; transition: 0.3s;
+        }
+        .chatbot-button:hover { transform: scale(1.1); background: rgba(50,50,70,0.9); }
+        .chatbot-panel {
+            position: fixed; bottom: 120px; right: 30px; width: 350px; height: 500px;
+            background: rgba(26,30,40,0.95); backdrop-filter: blur(20px);
+            border: 2px solid #ffd700; border-radius: 40px;
+            box-shadow: 0 0 80px rgba(0,0,0,0.7), 0 0 60px #ffd700;
+            display: flex; flex-direction: column; overflow: hidden; z-index: 1999;
+            transition: transform 0.3s ease, opacity 0.3s; transform-origin: bottom right;
+        }
+        .chatbot-panel.hidden { transform: scale(0); opacity: 0; pointer-events: none; }
+        .chat-header {
+            padding: 1.5rem; background: rgba(255,215,0,0.1); border-bottom: 1px solid #ffd700;
+            display: flex; justify-content: space-between; align-items: center; color: #ffd700;
+        }
+        .chat-header i { cursor: pointer; font-size: 1.5rem; }
+        .chat-messages {
+            flex: 1; padding: 1.5rem; overflow-y: auto; display: flex; flex-direction: column; gap: 0.8rem;
+        }
+        .message { padding: 0.8rem 1.2rem; border-radius: 40px; max-width: 80%; }
+        .user-message { background: rgba(255,215,0,0.2); align-self: flex-end; }
+        .bot-message { background: rgba(192,192,192,0.2); align-self: flex-start; }
+        .chat-input-area {
+            padding: 1.2rem; border-top: 1px solid #ffd700; display: flex; gap: 0.5rem;
+        }
+        .chat-input-area input {
+            flex: 1; background: rgba(255,255,255,0.1); border: none; border-radius: 60px; padding: 0.8rem 1.2rem;
+            color: white; outline: none; border: 1px solid #ffd700;
+        }
+        .chat-input-area button {
+            background: rgba(255,215,0,0.2); border: 1px solid #ffd700; border-radius: 50%; width: 45px; height: 45px;
+            color: #ffd700; cursor: pointer;
+        }
+
+        footer { text-align: center; padding: 2rem; color: #c0c0c0; }
+
+        @media (max-width:900px) {
+            .hero-grid, .proj-grid { grid-template-columns:1fr; }
+            .flower { transform:scale(0.7); }
+            .nav-links { display:none; flex-direction:column; background:rgba(26,30,40,0.9); border-radius:50px; padding:2rem; }
+            .nav-links.active { display:flex; }
+            .menu-toggle { display:block; }
+            .jump-stage-container { flex-direction: column; align-items: center; gap: 30px; }
+            .stage-line { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="gold-silver-bg"></div>
+    <div class="metallic-shine"></div>
+    <div class="particle p1"></div><div class="particle p2"></div><div class="particle p3"></div><div class="particle p4"></div>
+
+    <header>
+        <nav>
+            <div class="logo">✨ V</div>
+            <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-gem"></i></div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li><li><a href="#education">Education</a></li><li><a href="#certification">Certification</a></li><li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- home with interactive girl photo that TALKS when touched -->
+        <section id="home" class="section" style="padding-top:8rem;">
+            <div class="metallic-card">
+                <div class="hero-grid">
+                    <div>
+                        <span class="hero-badge"><i class="fas fa-crown"></i> Aspiring Software Engineer</span>
+                        <h1 class="hero-name"><span>Vinothini M</span></h1>
+                        <div class="about-text">
+                            <p>A dedicated Electronics and Communication Engineering student at Government College of Engineering, Salem, with a strong passion for software development. I thrive on solving complex problems with elegant code and building applications that make a difference. My technical journey began with C and C++, and I've since expanded into Python and Java.</p>
+                            <p style="margin-top:1rem;"> My goal is to join an innovative tech company where I can contribute to cutting-edge solutions while continuously learning and growing as a software engineer. </p>
+                            <p style="margin-top:1rem;"> I believe in the power of technology to transform lives and am committed to using my skills for meaningful impact.</p>
+                        </div>
+                    </div>
+                    <div class="hero-decor">
+                        <div class="profile-photo" id="profileGirl" onclick="talk()">
+                            <i class="fas fa-female"></i>
+                            <div class="speech-bubble" id="speechBubble">Hi! I'm Vinothini 👋</div>
+                        </div>
+                        <div class="photo-caption">Vinothini M</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- about section (detailed) -->
+        <section id="about" class="section">
+            <div class="metallic-card">
+                <h2 class="section-title"><i class="fas fa-user"></i> More About Me</h2>
+                <div style="font-size:1.2rem; line-height:1.8;">
+                    <p>🌟 <strong>Background:</strong> I'm Vinothini, born and raised in Namakkal, Tamil Nadu. My fascination with computers started young , watching my neighbour code. That curiosity led me to pursue Electronics and Communication Engineering, where I discovered my true calling in software development.</p>
+
+                    <p style="margin-top:1rem;">🎯 <strong>Career Goals:</strong> Short-term, I aim to secure an entry-level software engineering role where I can contribute meaningfully. </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- skills: flower + 3 books -->
+        <section id="skills" class="section">
+            <h2 class="section-title"><i class="fas fa-pagelines"></i> Skills</h2>
+            <div class="metallic-card">
+                <div class="flower-container"><div class="flower"><div class="flower-core"><span>Technical</span><span>core</span></div><div class="petal petal-1"><span class="skill-name">C</span><span class="skill-percent-hidden">85%</span></div><div class="petal petal-2"><span class="skill-name">C++</span><span class="skill-percent-hidden">80%</span></div><div class="petal petal-3"><span class="skill-name">Python</span><span class="skill-percent-hidden">75%</span></div><div class="petal petal-4"><span class="skill-name">Java</span><span class="skill-percent-hidden">50%</span></div><div class="petal petal-5"><span class="skill-name">VS Code</span><span class="skill-percent-hidden">90%</span></div></div></div>
+                <div class="book-container">
+                    <div class="book-card" onclick="this.classList.toggle('open')"><div class="book-inner"><div class="book-front"><i class="fas fa-broadcast-tower"></i><h4>Communication</h4><div class="book-hint">▼ click to open</div></div><div class="book-back"><p>✧ clear technical writing ✧</p><p>✧ active listener ✧</p><p>✧ confident presenter ✧</p></div></div></div>
+                    <div class="book-card" onclick="this.classList.toggle('open')"><div class="book-inner"><div class="book-front"><i class="fas fa-people-arrows"></i><h4>Team work</h4><div class="book-hint">▼ click to open</div></div><div class="book-back"><p>✧ cross‑functional ✧</p><p>✧ conflict resolution ✧</p><p>✧ agile collaboration ✧</p></div></div></div>
+                    <div class="book-card" onclick="this.classList.toggle('open')"><div class="book-inner"><div class="book-front"><i class="fas fa-crown"></i><h4>Leadership</h4><div class="book-hint">▼ click to open</div></div><div class="book-back"><p>✧ mentoring peers ✧</p><p>✧ project coordination ✧</p><p>✧ decision making ✧</p></div></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- projects (only two) -->
+        <section id="projects" class="section">
+            <h2 class="section-title"><i class="fas fa-code"></i> Projects</h2>
+            <div class="proj-grid">
+                <div class="proj-card"><div class="proj-icon"><i class="fas fa-microchip"></i></div><div class="proj-title">AI‑based adaptive modulation</div><div class="proj-desc">Developed an ML-driven adaptive modulation system using C++ and MATLAB. Improves data rate by 22% under variable channel conditions. Implemented signal classification with a lightweight neural network. (ongoing research, 2024)</div></div>
+                <div class="proj-card"><div class="proj-icon"><i class="fas fa-certificate"></i></div><div class="proj-title">Online certificate generator</div><div class="proj-desc">Full‑stack web app (C++ REST backend, HTML/CSS/JS frontend) that generates PDF certificates from templates. Supports bulk generation, QR validation, and secure download. Used by college for workshops (300+ users). Deployed in 2025.</div></div>
+            </div>
+        </section>
+
+        <!-- EDUCATION with JUMPING GIRL that GROWS -->
+        <section id="education" class="section">
+            <h2 class="section-title"><i class="fas fa-school"></i> Education</h2>
+            <div class="education-jump-section">
+                <div class="jump-title">🎓 My Learning Journey 🎓</div>
+                <div class="jump-stage-container">
+                    <div class="stage-line"></div>
+                    <!-- SSLC stage - small girl -->
+                    <div class="stage stage-sslc" id="stage-sslc">
+                        <div class="year">2020-2021</div>
+                        <div class="platform">SSLC 100%</div>
+                        <div class="jumping-girl" id="girl-sslc">👧</div>
+                    </div>
+                    <!-- HSC stage - medium girl -->
+                    <div class="stage stage-hsc" id="stage-hsc">
+                        <div class="year">2022-2023</div>
+                        <div class="platform">HSC 95.66%</div>
+                        <div class="jumping-girl" id="girl-hsc">👧</div>
+                    </div>
+                    <!-- College stage - larger girl -->
+                    <div class="stage stage-college" id="stage-college">
+                        <div class="year">2023-2027</div>
+                        <div class="platform">B.E. ECE | CGPA 8.66</div>
+                        <div class="jumping-girl" id="girl-college">👧</div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- certifications -->
+        <section id="certification" class="section">
+            <h2 class="section-title"><i class="fas fa-medal"></i> Certifications</h2>
+            <div class="cert-row">
+                <div class="cert-badge"><i class="fab fa-cuttlefish"></i> C++ (Cybernaut)</div>
+                <div class="cert-badge"><i class="fab fa-python"></i> Python (Cybernaut)</div>
+                <div class="cert-badge"><i class="fab fa-java"></i> Java (Cybernaut)</div>
+            </div>
+        </section>
+
+        <!-- contact -->
+        <section id="contact" class="section">
+            <h2 class="section-title"><i class="fas fa-paper-plane"></i> Get in touch</h2>
+            <div class="contact-panel">
+                <div class="contact-flex">
+                    <a href="mailto:vinothinim47@gmail.com" class="contact-item"><i class="fas fa-envelope"></i> vinothinim47@gmail.com</a>
+                    <a href="#" class="contact-item"><i class="fab fa-linkedin"></i> linkedin.com/in/vinothini-m</a>
+                </div>
+                <p style="margin-top:2rem; font-size:1.5rem; background: linear-gradient(135deg,#ffd700,#c0c0c0); -webkit-background-clip:text; background-clip:text; color:transparent;">✨ Let's Connect ✨</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- CHATBOT -->
+    <div class="chatbot-button" id="chatbotToggle" onclick="toggleChat()"><i class="fas fa-comment-dots"></i></div>
+    <div class="chatbot-panel hidden" id="chatbotPanel">
+        <div class="chat-header"><h3>💬 Vinothini's AI</h3><i class="fas fa-times" onclick="toggleChat()"></i></div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">Hi! I know all about Vinothini. Ask me anything about her skills, projects, education, background...</div>
+        </div>
+        <div class="chat-input-area"><input type="text" id="chatInput" placeholder="Ask me..." onkeypress="if(event.key==='Enter') sendMessage()"><button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button></div>
+    </div>
+
+    <footer>© 2026 Vinothini M · gold & silver · girl talks on touch · growing education</footer>
+
+    <script>
+        // Navigation
+        function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
+        document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', function(e){ e.preventDefault(); const id=this.getAttribute('href').substring(1); document.getElementById(id)?.scrollIntoView({behavior:'smooth'}); document.getElementById('navLinks').classList.remove('active'); }));
+
+        // Girl TALKS when clicked - different messages each time
+        const messages = [
+            "Hi! I'm Vinothini 👋",
+            "Thanks for visiting my portfolio!",
+            "I love coding and building things ✨",
+            "Ask me about my projects!",
+            "I'm currently learning full-stack development 💻",
+            "Namakkal is my hometown 🌸",
+            "I enjoy mentoring juniors 👩‍🏫",
+            "Click on the books to see my soft skills!",
+            "Watch me grow through education stages! 📚",
+            "Connect with me on LinkedIn! 🤝"
+        ];
+        
+        function talk() {
+            const profile = document.getElementById('profileGirl');
+            const bubble = document.getElementById('speechBubble');
+            
+            // Pick a random message
+            const randomIndex = Math.floor(Math.random() * messages.length);
+            bubble.textContent = messages[randomIndex];
+            
+            // Show bubble
+            profile.classList.add('show-bubble');
+            
+            // Hide after 2.5 seconds
+            setTimeout(() => {
+                profile.classList.remove('show-bubble');
+            }, 2500);
+        }
+
+        // Jumping girl with growth - sequential jumping and size changes
+        const girls = {
+            sslc: document.getElementById('girl-sslc'),
+            hsc: document.getElementById('girl-hsc'),
+            college: document.getElementById('girl-college')
+        };
+        
+        // Stages with their size classes
+        const stages = {
+            sslc: document.getElementById('stage-sslc'),
+            hsc: document.getElementById('stage-hsc'),
+            college: document.getElementById('stage-college')
+        };
+        
+        // Hide all except SSLC initially
+        girls.hsc.style.display = 'none';
+        girls.college.style.display = 'none';
+        girls.sslc.style.display = 'block';
+        
+        // Ensure proper size classes are applied (they already are via stage classes)
+        
+        let currentStage = 'sslc';
+        setInterval(() => {
+            // Hide all
+            girls.sslc.style.display = 'none';
+            girls.hsc.style.display = 'none';
+            girls.college.style.display = 'none';
+            
+            // Show next with appropriate size (already handled by stage classes)
+            if (currentStage === 'sslc') {
+                girls.hsc.style.display = 'block';
+                currentStage = 'hsc';
+            } else if (currentStage === 'hsc') {
+                girls.college.style.display = 'block';
+                currentStage = 'college';
+            } else {
+                girls.sslc.style.display = 'block';
+                currentStage = 'sslc';
+            }
+        }, 2000); // change every 2 seconds
+
+        // Chatbot with knowledge base
+        function toggleChat() { document.getElementById('chatbotPanel').classList.toggle('hidden'); }
+        
+        function sendMessage() {
+            const input = document.getElementById('chatInput'); 
+            const msg = input.value.trim(); 
+            if(!msg) return;
+            
+            const messages = document.getElementById('chatMessages');
+            messages.innerHTML += `<div class="message user-message">${msg}</div>`;
+            input.value = '';
+            
+            // Smart responses based on comprehensive knowledge
+            setTimeout(() => {
+                let reply = "";
+                const lower = msg.toLowerCase();
+                
+                // Knowledge base about Vinothini
+                if(lower.includes('name') || lower.includes('who are you')) {
+                    reply = "I'm Vinothini M, an aspiring software engineer and ECE student at Government College of Engineering, Salem.";
+                }
+                else if(lower.includes('c++') || lower.includes('c plus plus')) {
+                    reply = "Vinothini has 80% proficiency in C++. She's certified by Cybernaut and has used it in her certificate generator project.";
+                }
+                else if(lower.includes('python')) {
+                    reply = "She codes in Python with 75% skill level. She's currently exploring ML applications with Python.";
+                }
+                else if(lower.includes('java')) {
+                    reply = "She knows Java at 50% proficiency and is actively improving through practice.";
+                }
+                else if(lower.includes('c language') || lower.includes('c programming')) {
+                    reply = "She's strong in C with 85% proficiency - it's where her programming journey began.";
+                }
+                else if(lower.includes('project') || lower.includes('projects')) {
+                    reply = "She has two main projects: 1) AI-based adaptive modulation (C++/MATLAB) and 2) Online certificate generator (full-stack web app).";
+                }
+                else if(lower.includes('adaptive modulation') || lower.includes('ai project')) {
+                    reply = "The AI adaptive modulation project uses ML to improve data rates by 22%. It's implemented in C++ and MATLAB with a lightweight neural network.";
+                }
+                else if(lower.includes('certificate generator') || lower.includes('certificate project')) {
+                    reply = "The online certificate generator is a full-stack app with C++ REST backend and HTML/CSS/JS frontend. It handles bulk PDF generation with QR validation and has 300+ users.";
+                }
+                else if(lower.includes('education') || lower.includes('college') || lower.includes('school')) {
+                    reply = "Vinothini completed SSLC with 100% (2021), HSC with 95.66% (2023), and is now pursuing B.E. ECE at Govt College of Engineering, Salem with CGPA 8.66 (2023-27).";
+                }
+                else if(lower.includes('sslc') || lower.includes('10th')) {
+                    reply = "She scored 100% in her SSLC (10th) from AKV Matric Hr.Sec.School in 2021.";
+                }
+                else if(lower.includes('hsc') || lower.includes('12th')) {
+                    reply = "She scored 95.66% in her HSC (12th) from AKV Matric Hr.Sec.School in 2023.";
+                }
+                else if(lower.includes('cgpa') || lower.includes('gpa')) {
+                    reply = "Her current CGPA in B.E. ECE is 8.66.";
+                }
+                else if(lower.includes('certification') || lower.includes('certificate')) {
+                    reply = "She holds certifications from Cybernaut in C++, Python, and Java.";
+                }
+                else if(lower.includes('skill') || lower.includes('skills')) {
+                    reply = "Technical skills: C (85%), C++ (80%), Python (75%), Java (50%), VS Code (90%). Soft skills: Communication, Teamwork, Leadership - click on the books to see details!";
+                }
+                else if(lower.includes('communication')) {
+                    reply = "Communication skills: clear technical writing, active listening, and confident presenting.";
+                }
+                else if(lower.includes('team') || lower.includes('teamwork')) {
+                    reply = "Teamwork: experienced in cross-functional collaboration, conflict resolution, and agile methodologies.";
+                }
+                else if(lower.includes('leadership') || lower.includes('lead')) {
+                    reply = "Leadership: mentoring peers, project coordination, and decision making.";
+                }
+                else if(lower.includes('contact') || lower.includes('email') || lower.includes('reach')) {
+                    reply = "You can reach her at vinothinim47@gmail.com or connect on LinkedIn.";
+                }
+                else if(lower.includes('linkedin')) {
+                    reply = "Her LinkedIn profile is linkedin.com/in/vinothini-m";
+                }
+                else if(lower.includes('hobby') || lower.includes('interest') || lower.includes('like to')) {
+                    reply = "Outside tech, she loves reading fiction, listening to classical music, cooking Indian dishes, and sketching. She's also an avid tech blog reader.";
+                }
+                else if(lower.includes('goal') || lower.includes('aspiration') || lower.includes('dream')) {
+                    reply = "Her short-term goal is an entry-level software engineering role. Long-term, she aspires to become a full-stack architect and maybe start her own tech initiative.";
+                }
+                else if(lower.includes('background') || lower.includes('from where')) {
+                    reply = "She's from Namakkal, Tamil Nadu. Her fascination with computers started young, inspired by her elder brother's coding.";
+                }
+                else if(lower.includes('hello') || lower.includes('hi') || lower.includes('hey')) {
+                    reply = "Hello! I'm here to answer anything about Vinothini's journey. What would you like to know?";
+                }
+                else if(lower.includes('thank')) {
+                    reply = "You're very welcome! Feel free to ask more questions.";
+                }
+                else if(lower.includes('girl') || lower.includes('photo') || lower.includes('picture') || lower.includes('touch')) {
+                    reply = "You can click on my profile picture - it says something different every time! And in the education section, watch the girl grow as she jumps through stages!";
+                }
+                else {
+                    reply = "I'm not sure about that. Try asking about her skills, projects, education, certifications, background, or goals!";
+                }
+                
+                messages.innerHTML += `<div class="message bot-message">${reply}</div>`;
+                messages.scrollTop = messages.scrollHeight;
+            }, 400);
+            
+            messages.scrollTop = messages.scrollHeight;
+        }
+    </script>
+</body>
+</html>
